@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Organizer</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Create Organizer</h1>
+    <form action="/organizers/create" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required>
+        </div>
+        <button type="submit">Create</button>
+    </form>
+    <a href="/organizers/list">Back to Organizer List</a>
+</body>
+</html>

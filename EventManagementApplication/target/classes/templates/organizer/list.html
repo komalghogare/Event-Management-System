@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizer List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Organizer List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact Info</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="organizer : ${organizers}">
+                <td th:text="${organizer.id}"></td>
+                <td th:text="${organizer.name}"></td>
+                <td th:text="${organizer.contactInfo}"></td>
+                <td>
+                    <a th:href="@{/organizers/update/{id}(id=${organizer.id})}">Edit</a>
+                    <form th:action="@{/organizers/delete/{id}(id=${organizer.id})}" method="post" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/organizers/create">Create New Organizer</a>
+</body>
+</html>
